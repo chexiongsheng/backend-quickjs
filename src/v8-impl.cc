@@ -1368,7 +1368,7 @@ MaybeLocal<Value> TryCatch::StackTrace(
     return MaybeLocal<Value>(Local<String>(str));
 }
     
-Local<v8::Message> TryCatch::Message() const {
+Local<Message> TryCatch::Message() const {
     JSValue fileNameVal = JS_GetProperty(isolate_->current_context_->context_, catched_, JS_ATOM_fileName);
     JSValue lineNumVal = JS_GetProperty(isolate_->current_context_->context_, catched_, JS_ATOM_lineNumber);
     
